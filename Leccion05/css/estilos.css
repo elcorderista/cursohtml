@@ -1,0 +1,54 @@
+/*El estilo se aplica a toda la tabla*/
+ul{
+    list-style-type: none;
+    background-color: #457b9d;
+    overflow: hidden; /*Para mostrar la lista en un bloque independiente*/
+    margin:0;
+    padding: 0;
+}
+
+/*Estilo aplicable a los elementos de la lista*/
+ul li{
+    float: left; /*Para que se alinene a la izqauierda*/
+}
+/*Se aplica a  los links que esten dentro de listas*/
+ul li a{
+    display:block;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none; /*Se elimina el subrrallado en los links*/
+}
+h1{
+    color:#1d3557;
+}
+
+
+
+/*Diseño de los links dentro de lista cuando pasa el mouse*/
+li a:hover{
+    background-color: #1d3557;
+}
+/*Quitamos el estilo de numeros, letras, etc que genera por defaul, 
+y establecemos que contador se reinicie*/
+ol {
+    list-style: none;
+    counter-reset: contador;
+}
+
+/*Indicamos que por cada elemento incremente la variable
+contador*/
+ol li{
+    counter-increment: contador;
+}
+
+/*Para definir que se visualiza antes de cada elemento
+Definimos una variable contador*/
+ol li::before {
+    content: 'Curso ' counter(contador) '- ';
+    color: #ff6f00;
+}
+/*Definimos contenido en este caso un . despues de cada elemento*/
+ol li::after{
+    content: '.';
+}
